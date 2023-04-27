@@ -130,7 +130,7 @@ def extract_FULL_sourcedata(spark, source_table_name, target_table_name):
     else:
         print("No new Records at Source")
     
-    # Writing data to Target : SQL server RDS
+    # Writing data to Target : Redshift Cluster
     if len(df_final_2.head(1)) > 0:
         df_final_2.write \
             .format("com.databricks.spark.redshift") \
